@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Web - Alvira Zahra</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fcf8f9;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sembunyikan semua halaman secara default */
+        .halaman { 
+            display: none; 
+            padding: 20px; 
+        }
+
+        /* Tampilkan halaman yang sedang dipilih berdasarkan tag :target */
+        #beranda:not(:target), 
+        #profil:not(:target), 
+        #galeri:not(:target), 
+        #artikel:not(:target), 
+        #bukutamu:not(:target) {
+            display: none;
+        }
+
+        #beranda:target { display: block; }
+        #profil:target { display: block; }
+        #galeri:target { display: block; }
+        #artikel:target { display: block; }
+        #bukutamu:target { display: block; }
+
+        /* Tampilan awal saat pertama kali dibuka (Default: Beranda) */
+        body:not(:has(:target)) #beranda { display: block; }
+
+        /* EFEK WARNA TAB NAVIGASI BERUBAH SAAT DIPENCET/AKTIF */
+        /* Default warna tab biasa (pink muda) */
+        .tab-menu { background-color: #f7d6e0; }
+        .tab-menu a { color: #590d22; text-decoration: none; display: block; padding: 12px; }
+
+        /* Saat tab Beranda dipencet */
+        body:has(#beranda:target) .tab-beranda,
+        body:not(:has(:target)) .tab-beranda { background-color: #ff758c !important; }
+        body:has(#beranda:target) .tab-beranda a,
+        body:not(:has(:target)) .tab-beranda a { color: #ffffff !important; }
+
+        /* Saat tab Profil dipencet */
+        body:has(#profil:target) .tab-profil { background-color: #ff758c !important; }
+        body:has(#profil:target) .tab-profil a { color: #ffffff !important; }
+
+        /* Saat tab Galeri dipencet */
+        body:has(#galeri:target) .tab-galeri { background-color: #ff758c !important; }
+        body:has(#galeri:target) .tab-galeri a { color: #ffffff !important; }
+
+        /* Saat tab Artikel dipencet */
+        body:has(#artikel:target) .tab-artikel { background-color: #ff758c !important; }
+        body:has(#artikel:target) .tab-artikel a { color: #ffffff !important; }
+
+        /* Saat tab Buku Tamu dipencet */
+        body:has(#bukutamu:target) .tab-bukutamu { background-color: #ff758c !important; }
+        body:has(#bukutamu:target) .tab-bukutamu a { color: #ffffff !important; }
+    </style>
+</head>
+<body>
+
+    <!-- BAGIAN ATAS: TULISAN SAMBUTAN & LOGO -->
+    <table border="0" width="100%" cellpadding="10" cellspacing="0" bgcolor="#f8edeb">
+        <tr>
+            <td width="12%" align="center">
+                <img src="assets/logo-az.jpg" alt="Logo Alvira Zahra" width="65" height="65">
+            </td>
+            <td width="88%" align="center">
+                <font color="#590d22">
+                    <h2>🌸 Selamat Datang di Situs Web Pribadi Saya 🌸</h2>
+                    <p><i>Website Resmi Alvira Zahra - Eksplorasi Profil, Galeri, dan Artikel Hobi</i></p>
+                </font>
+            </td>
+        </tr>
+    </table>
+
+    <!-- TAB NAVIGASI (Background Tab Otomatis Berubah Warna Saat Dipencet) -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="1" width="100%" cellpadding="0" cellspacing="0" bordercolor="#e8aeb7">
+                    <tr align="center">
+                        <td width="20%" class="tab-menu tab-beranda"><a href="#beranda"><b>Beranda</b></a></td>
+                        <td width="20%" class="tab-menu tab-profil"><a href="#profil"><b>Profil</b></a></td>
+                        <td width="20%" class="tab-menu tab-galeri"><a href="#galeri"><b>Galeri</b></a></td>
+                        <td width="20%" class="tab-menu tab-artikel"><a href="#artikel"><b>Artikel</b></a></td>
+                        <td width="20%" class="tab-menu tab-bukutamu"><a href="#bukutamu"><b>Buku Tamu</b></a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- THUMBNAIL / BANNER GAMBAR DI ATAS KONTEN -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <img src="assets/thumbnail.jpg" alt="Thumbnail Banner Web" width="100%" height="170">
+            </td>
+        </tr>
+    </table>
+
+    <!-- 1. HALAMAN BERANDA -->
+    <div id="beranda" class="halaman">
+        <center>
+            <h2>Halaman Beranda</h2>
+            <table border="1" width="60%" cellpadding="15" cellspacing="0" bordercolor="#cccccc" bgcolor="#fff0f3">
+                <tr>
+                    <td>
+                        <font color="#9e1b32">
+                            <p><b>Penyambutan Pengunjung:</b> Halo semuanya! Halaman utama ini menyambut para pengunjung yang datang ke situs web pribadi aku.</p>
+                            <p><b>Ringkasan Isi Web:</b> Di situs sederhana ini kamu bisa melihat profil biodata, dokumentasi galeri foto, artikel hobi, dan mengisi buku tamu.</p>
+                        </font>
+                        <center>
+                            <br>
+                            <img src="assets/profil.jpg" alt="Foto Profil Utama" width="130" height="130"><br>
+                            <small><b>Foto Utama Pengembang</b></small>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <!-- 2. HALAMAN PROFIL -->
+    <div id="profil" class="halaman">
+        <center>
+            <h2>Halaman Profil</h2>
+            <table border="1" width="60%" cellpadding="12" cellspacing="0" bordercolor="#cccccc" bgcolor="#f3e5f5">
+                <tr>
+                    <td width="35%"><b>Nama Lengkap</b></td>
+                    <td width="65%">Alvira Zahra</td>
+                </tr>
+                <tr>
+                    <td><b>Tempat, Tanggal Lahir</b></td>
+                    <td>Kota Impian, 17 Agustus 2005</td>
+                </tr>
+                <tr>
+                    <td><b>Riwayat Pendidikan</b></td>
+                    <td>
+                        <ul>
+                            <li>SD Ceria (2014)</li>
+                            <li>SMP Kasih (2017)</li>
+                            <li>SMA Mawar (2020)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Informasi Kontak</b></td>
+                    <td>Email: alvirazahra@email.com</td>
+                </tr>
+                <tr>
+                    <td><b>Media Sosial</b></td>
+                    <td>Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">@alvira.zahra</a></td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <!-- 3. HALAMAN GALERI -->
+    <div id="galeri" class="halaman">
+        <center>
+            <h2>Halaman Galeri</h2>
+            <table border="1" width="80%" cellpadding="12" cellspacing="0" bordercolor="#cccccc" bgcolor="#e0f2f1">
+                <tr align="center">
+                    <td width="33%">
+                        <img src="assets/foto1.jpg" alt="Dokumentasi Pribadi" width="180" height="130"><br><br>
+                        <b>Dokumentasi Pribadi</b>
+                    </td>
+                    <td width="33%">
+                        <img src="assets/foto2.jpg" alt="Dokumentasi Keluarga" width="180" height="130"><br><br>
+                        <b>Dokumentasi Keluarga</b>
+                    </td>
+                    <td width="33%">
+                        <img src="assets/foto3.jpg" alt="Dokumentasi Teman" width="180" height="130"><br><br>
+                        <b>Dokumentasi Teman</b>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <!-- 4. HALAMAN ARTIKEL -->
+    <div id="artikel" class="halaman">
+        <center>
+            <h2>Halaman Artikel</h2>
+            <table border="1" width="65%" cellpadding="15" cellspacing="0" bordercolor="#cccccc" bgcolor="#fff3e0">
+                <tr>
+                    <td>
+                        <h3>1. Hobi Mendengarkan Musik</h3>
+                        <p>Mendengarkan musik adalah kegiatan favorit saya untuk mengisi waktu luang. <strong>Irama dan nada</strong> selalu bisa memberikan ketenangan pikiran.</p>
+                        <hr>
+                        <h3>2. Menulis Catatan Harian</h3>
+                        <p>Menuliskan cerita keseharian di dalam buku catatan kecil membantu saya untuk <em>merefleksikan diri</em> dan mengenang masa-masa indah.</p>
+                        <hr>
+                        <h3>3. Menonton Film atau Drama</h3>
+                        <p>Menikmati serial drama atau film favorit adalah cara paling seru untuk melepas lelah di akhir pekan setelah beraktivitas.</p>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <!-- 5. HALAMAN BUKU TAMU -->
+    <div id="bukutamu" class="halaman">
+        <center>
+            <h2>Halaman Buku Tamu</h2>
+            <table border="1" width="50%" cellpadding="12" cellspacing="0" bordercolor="#cccccc" bgcolor="#f0f4c3">
+                <tr>
+                    <td>
+                        <form action="#" method="GET">
+                            <table border="1" width="100%" cellpadding="8" cellspacing="0" bordercolor="#dddddd" bgcolor="#ffffff">
+                                <tr>
+                                    <td width="30%"><label for="nama">Nama</label></td>
+                                    <td width="70%"><input type="text" id="nama" name="nama" required size="35"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Email</label></td>
+                                    <td><input type="email" id="email" name="email" required size="35"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Jenis Kelamin</label></td>
+                                    <td>
+                                        <input type="radio" id="pria" name="jenis_kelamin" value="Laki-laki">
+                                        <label for="pria">Laki-laki</label><br>
+                                        <input type="radio" id="wanita" name="jenis_kelamin" value="Perempuan">
+                                        <label for="wanita">Perempuan</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"><label for="pesan">Pesan/Kesan</label></td>
+                                    <td>
+                                        <textarea id="pesan" name="pesan" rows="6" cols="35" required></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <center>
+                                <input type="submit" value="Kirim">
+                                <input type="reset" value="Reset">
+                            </center>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <br><br><hr color="#f7d6e0">
+    <center><p><small>&copy; 2026 Alvira Zahra</small></p></center>
+
+</body>
+</html></html>
